@@ -75,7 +75,7 @@ function telekit_cmd(telekit) {
                 context.command = command;
 
                 telekit.emit('command', context);
-                telekit.emit(`/${context.command.entities[0].name}`);
+                telekit.emit(`/${context.command.entities[0].name}`, context);
                 if (telekit.command) telekit.command(context);
                 telekit.middleware.transmit('command', context);
 
