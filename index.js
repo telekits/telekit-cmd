@@ -70,17 +70,22 @@ function telekit_cmd(telekit) {
         let command = parse(context.update);
 
         if (command) {
-            if (command.entities[0].type == 'bot_command') {
-                context.isCommand = true;
-                context.command = command;
+            command.name = command.entities[0].name;
+            command.mention = command.entities[0].mention;
 
-                telekit.emit('command', context);
-                telekit.emit(`/${context.command.entities[0].name}`, context);
-                if (telekit.command) telekit.command(context);
-                telekit.middleware.transmit('command', context);
+            context.isCommand = true;
+            context.command = command;
 
-                return;
+            telekit.emit('command', context);
+            telekit.emit(`/${context.command.entities[0].name}`, context);
+
+            if (telekit.command) {
+                telekit.command(context);
             }
+
+            telekit.middleware.transmit('command', context);
+
+            return;
         }
 
         context.isCommand = false;
