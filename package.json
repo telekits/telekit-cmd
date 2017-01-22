@@ -1,6 +1,6 @@
 {
   "name": "telekit-cmd",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "This extend module for `telekit` that adds support of commands",
   "main": "index.js",
   "author": "Denis Maslennikov <mrdenniska@gmail.com> (nofach.com)",
