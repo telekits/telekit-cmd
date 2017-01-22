@@ -1,0 +1,31 @@
+{
+  "name": "telekit-cmd",
+  "version": "0.1.0",
+  "description": "This extend module for `telekit` that adds support of commands",
+  "main": "index.js",
+  "author": "Denis Maslennikov <mrdenniska@gmail.com> (nofach.com)",
+  "license": "MIT",
+  "homepage": "https://telekits.js.org",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/telekits/telekit-cmd.git"
+  },
+  "bugs": {
+    "url": "https://github.com/telekits/telekit-cmd/issues"
+  },
+  "keywords": [
+    "middleware",
+    "framework",
+    "telegram",
+    "command",
+    "telekit",
+    "useful",
+    "tools",
+    "kit",
+    "api",
+    "bot"
+  ],
+  "peerDependencies": {
+    "telekit": "^0.1.0"
+  }
+}
