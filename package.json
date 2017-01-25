@@ -1,7 +1,7 @@
 {
   "name": "telekit-cmd",
   "version": "0.1.2",
-  "description": "This extend module for `telekit` that adds support of commands",
+  "description": "The module that simplifies work with commands in telekit",
   "main": "index.js",
   "author": "Denis Maslennikov <mrdenniska@gmail.com> (nofach.com)",
   "license": "MIT",
@@ -26,6 +26,6 @@
     "bot"
   ],
   "peerDependencies": {
-    "telekit": "^0.1.0"
+    "telekit": "^0.1.2"
   }
 }
