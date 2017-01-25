@@ -1,5 +1,5 @@
 /**
- * This extend module for `telekit` that adds support of commands
+ * An easy work with commands for Telekit
  *
  * @module telekit-cmd
  * @author Denis Maslennikov <mrdenniska@gmail.com> (nofach.com)
@@ -67,17 +67,17 @@ function parse(update) {
  */
 function telekit_cmd(telekit) {
     let handler = (context) => {
-        let command = parse(context.update);
+        let cmd = parse(context.update);
 
-        if (command) {
-            command.name = command.entities[0].name;
-            command.mention = command.entities[0].mention;
+        if (cmd) {
+            cmd.name = cmd.entities[0].name;
+            cmd.mention = cmd.entities[0].mention;
 
             context.isCommand = true;
-            context.command = command;
+            context.command = cmd;
 
             telekit.emit('command', context);
-            telekit.emit(`/${context.command.entities[0].name}`, context);
+            telekit.emit(`/${context.command.name}`, context);
 
             if (telekit.command) {
                 telekit.command(context);
@@ -91,6 +91,9 @@ function telekit_cmd(telekit) {
         context.isCommand = false;
         context.command = null;
     };
+
+    telekit.context.isCommand = false;
+    telekit.context.command = null;
 
     telekit.on('message', handler);
     telekit.on('post', handler);
