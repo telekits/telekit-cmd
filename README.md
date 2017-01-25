@@ -1,5 +1,5 @@
 # telekit-cmd
-The module that simplifies work with commands into [telekit](https://github.com/telekits/telekit)  
+The module that simplifies work with commands in [telekit](https://github.com/telekits/telekit)  
 
 ## Install
 npm:
