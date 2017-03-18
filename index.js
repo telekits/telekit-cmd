@@ -66,7 +66,7 @@ function parse(update) {
  * @public
  */
 function telekit_cmd(telekit) {
-    let handler = (context) => {
+    let handle = (context) => {
         let cmd = parse(context.update);
 
         if (cmd) {
@@ -76,15 +76,14 @@ function telekit_cmd(telekit) {
             context.isCommand = true;
             context.command = cmd;
 
-            telekit.emit('command', context);
-            telekit.emit(`/${context.command.name}`, context);
-
             if (telekit.command) {
                 telekit.command(context);
             }
 
-            telekit.middleware.transmit('command', context);
+            telekit.emit('command', context);
+            telekit.emit(`/${context.command.name}`, context);
 
+            telekit.dispatch('command', context);
             return;
         }
 
@@ -95,8 +94,8 @@ function telekit_cmd(telekit) {
     telekit.context.isCommand = false;
     telekit.context.command = null;
 
-    telekit.on('message', handler);
-    telekit.on('post', handler);
+    telekit.on('message', handle);
+    telekit.on('post', handle);
 }
 
 /** Exports */
