@@ -1,6 +1,6 @@
 {
   "name": "telekit-cmd",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "The module that simplifies work with commands in telekit",
   "main": "index.js",
   "author": "Denis Maslennikov <mrdenniska@gmail.com> (nofach.com)",
